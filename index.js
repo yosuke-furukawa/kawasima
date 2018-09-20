@@ -1,6 +1,5 @@
 const argv = require('minimist')(process.argv.slice(2));
 const imgcat = require('imgcat');
-const twilioClient = require('./telephone.js');
 const meigen = require('./meigen.js');
 const image = "kawasima.gif";
 const semicolon = "semicolon.jpg";
@@ -23,6 +22,7 @@ async function main(args) {
     const tel = args[1];
     const message = args[2];
     const from = args[3];
+    const twilioClient = require('./telephone.js')();
     await twilioClient.messages.create({
       body: message,
       to: `+${tel}`,

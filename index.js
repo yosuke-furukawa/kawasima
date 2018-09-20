@@ -1,9 +1,10 @@
 const argv = require('minimist')(process.argv.slice(2));
+const path = require('path');
 const imgcat = require('imgcat');
 const meigen = require('./meigen.js');
-const image = "kawasima.gif";
-const semicolon = "semicolon.jpg";
-const lisper = "lisper.jpg";
+const image = path.join(__dirname, "kawasima.gif");
+const semicolon = path.join(__dirname, "semicolon.jpg");
+const lisper = path.join(__dirname, "lisper.jpg");
 
 async function main(args) {
   if (args[0] === 'meigen') {
